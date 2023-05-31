@@ -1,0 +1,337 @@
+{% extends 'header.html'%}
+
+
+{% load static %}
+
+{% block content%}
+<section class="news-feed">
+    <div class="container">
+        <div class="row row-margin">
+            {% for blog in blogs%}
+            <div class="col-sm-3 hidden-xs col-padding">
+                <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
+                    <div class="post-thumb img-zoom-in">
+                            {% if blog.Image %}
+                        <a href="{% url 'blog-details' blog.id %}">
+                            
+                            <img class="entry-thumb" src= {{blog.Image.url}} alt="">
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="post-info">
+                        <span class="color-1">{{ blog.Category }} </span>
+                        <h3 class="post-title post-title-size"><a href="{% url 'blog-details' blog.id %}" rel="bookmark">{{ blog.Title }}</a></h3>
+                        <div class="post-editor-date">
+                            <div class="post-date">
+                                <i class="pe-7s-clock"></i> {{ blog.Date_Created }}
+                            </div>
+                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                            <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-sm-8">
+            <section class="politics_wrapper">
+                <h3 class="category-headding ">Education</h3>
+                <div class="headding-border"></div>
+                <div class="row">
+                    <div id="content-slide-2" class="owl-carousel">
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
+                                        <h3><a href="{% url 'blog-details' singleView.id %}">{{singleView.Title}}.</a></h3>
+                                        <div class="post-thumb">
+                                               {% if singleView.Image %}
+                                            <a href="{% url 'blog-details' singleView.id %}">
+                                                <img src= {{singleView.Image.url}} class="img-responsive" alt="">
+                                            </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="post-title-author-details">
+                                        <div class="post-editor-date">
+                                            <div class="post-date">
+                                                <i class="pe-7s-clock"></i> {{ singleView.Date_Created }}
+                                            </div>
+                                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                        </div>
+                                        <p>{{ singleView.Description|slice:30}}... <a href="{% url 'blog-details' singleView.id %}">Read more...</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="row rn_block">
+                                            {% for blog in blogs%}
+                                            <div class="col-xs-6 col-md-6 col-sm-6 post-padding">
+                                                <div class="post-thumb wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                                                    {% if blog.Image %}
+                                                    <a href="{% url 'blog-details' blog.id %}">
+                                                        <img src= {{blog.Image.url}} class="img-responsive" alt="">
+                                                    </a>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="post-title-author-details">
+                                                    <h5><a href="{% url 'blog-details' blog.id %}">{{blog.Title}}</a></h5>
+                                                    <div class="post-editor-date">
+                                                        <div class="post-date">
+                                                            <i class="pe-7s-clock"></i> {{ blog.Date_Created }}
+                                                        </div>
+                                                        <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endfor%}
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+                                        <h3><a href="{% url 'blog-details' singleView.id %}">{{singleView.Title}}</a></h3>
+                                        <div class="post-thumb">
+                                            {% if singleView.Image %}
+                                            <a href="{% url 'blog-details' singleView.id %}">
+                                                <img src={{ singleView.Image.url }} class="img-responsive" alt="">
+                                            </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="post-title-author-details">
+                                        <div class="post-editor-date">
+                                            <div class="post-date">
+                                                <i class="pe-7s-clock"></i>{{singleView.Date_Ceated}}
+                                            </div>
+                                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                        </div>
+                                        <p>{{singleView.Description|slice:30}}... <a href="{% url 'details' singleView.id %}">Read more...</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="row rn_block">
+                                        {% for blog in blogs%}
+                                        <div class="col-xs-6 col-md-6 col-sm-6 post-padding">
+                                            <div class="post-thumb wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                                                {% if blog.Image %}
+                                                <a href="{% url 'blog-details' blog.id %}">
+                                                    <img src={{ blog.Image.url }} class="img-responsive" alt="">
+                                                </a>
+                                                {% endif %}
+                                            </div>
+                                            <div class="post-title-author-details">
+                                                <h5><a href="#">{{blog.Title}}</a></h5>
+                                                <div class="post-editor-date">
+                                                    <div class="post-date">
+                                                        <i class="pe-7s-clock"></i> {{ blog.Date_Created }}
+                                                    </div>
+                                                    <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor%}
+                                        
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="ads">
+                <a href="#"><img src="{% static 'images/top-bannner2.jpg ' %}" class="img-responsive center-block" alt=""></a>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 left-padding">
+            <div class="input-group search-area">
+                <input type="text" class="form-control" placeholder="Search articles here ..." name="q">
+                <div class="input-group-btn">
+                    <button class="btn btn-search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            
+            <div class="banner-add">
+                <span class="add-title">- Advertisement -</span>
+                <a href="#"><img src="{% static 'images/ad-banner.jpg ' %}" class="img-responsive center-block" alt=""></a>
+            </div>
+            <div class="tab-inner">
+                <ul class="tabs">
+                    <li><a href="#">POPULAR</a></li>
+                    <li><a href="#">MOST VIEWED</a></li>
+                </ul>
+                <hr>
+                <div class="tab_content">
+                    <div class="tab-item-inner">
+                            {% for post in posts %}
+                        
+                        <div class="box-item wow fadeIn" data-wow-duration="1s">
+                            <div class="img-thumb">
+                                {% if post.Image %}
+                                <a href="{% url 'details' post.id %}" rel="bookmark"><img class="entry-thumb" src={{ post.Image.url }} alt="" height="80" width="90"></a>
+                                {% endif %}
+                            </div>
+                            <div class="item-details">
+                                <h6 class="sub-category-title bg-color-1">
+                                        <a href="{% url 'details' post.id %}">{{post.Category}}</a>
+                                    </h6>
+                                <h3 class="td-module-title"><a href="{% url 'details' post.id %}">{{post.Title}}</a></h3>
+                                <div class="post-editor-date">
+                                    <div class="post-date">
+                                        <i class="pe-7s-clock"></i> {{ post.Date_Created }}
+                                    </div>
+                                    <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        
+                        {% endfor %}
+                    </div>
+                    <div class="tab-item-inner">
+                        {% for AllBog in AllBogs %}
+                        <div class="box-item">
+                                <div class="img-thumb">
+                                        {% if AllBog.Image %}
+                                        <a href="{% url 'blog-details' AllBog.id %}" rel="bookmark"><img class="entry-thumb" src={{ AllBog.Image.url }} alt="" height="80" width="100"></a>
+                                        {% endif %}
+                                    </div>
+                            <div class="item-details">
+                                <h6 class="sub-category-title bg-color-5">
+                                        <a href="{% url 'blog-details' AllBog.id %}">{{AllBog.Category}}</a>
+                                    </h6>
+                                <h3 class="td-module-title"><a href="{% url 'blog-details' AllBog.id %}">{{ AllBog.Title }}</a></h3>
+                                <div class="post-editor-date">
+                                    <div class="post-date">
+                                        <i class="pe-7s-clock"></i> {{ AllBog.Date_Created }}
+                                    </div>
+                                    <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="weekly-news-inner">
+    <div class="container">
+        <div class="row row-margin">
+            <h3 class="category-headding ">WEEKLY NEWS</h3>
+            <div class="headding-border bg-color-1"></div>
+            <div id="content-slide-4" class="owl-carousel">
+                {% for eachPost in Allposts%}
+                <div class="item">
+                    <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+                        <div class="post-thumb img-zoom-in">
+                            {% if eachPost.Image %}
+                            <a href="{% url 'details' eachPost.id %}">
+                                <img class="entry-thumb" src={{ eachPost.Image.url }} alt="">
+                            </a>
+                            {% endif %}
+                        </div>
+                        <div class="post-info">
+                            <span class="color-4">{{ eachPost.Category }} </span>
+                            <h3 class="post-title"><a href="{% url 'details' eachPost.id %}" rel="bookmark">{{eachPost.Title}}</a></h3>
+                            <div class="post-editor-date">
+                                <div class="post-date">
+                                    <i class="pe-7s-clock"></i> Oct 6, 2016
+                                </div>
+                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor%}
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+<section class="all-category-inner">
+    <div class="container">
+        <div class="row">
+            {% for post in posts %}
+            <div class="col-md-4 col-sm-4">
+                <div class="sports-inner">
+                    <h3 class="category-headding ">{{post.Category}}</h3>
+                    <div class="headding-border bg-color-1"></div>
+                    <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+                        <h3><a href="{% url 'details' post.id %}">{{ post.Title }}</a></h3>
+                        <div class="post-thumb">
+                            {% if post.Image %}
+                            <a href="{% url 'details' post.id %}">
+                                <img src= {{ post.Image.url }} class="img-responsive" alt="">
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="post-title-author-details">
+                        <div class="post-editor-date">
+                            <div class="post-date">
+                                <i class="pe-7s-clock"></i> {{ post.Date_Created }}
+                            </div>
+                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                        </div>
+                        <p>{{post.Description|slice:20}}...<a href="{% url 'details' post.id %}">Read more...</a></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for b in threeblogs%}
+            <div class="col-md-4 col-sm-4">
+                <div class="food-inner">
+                    <h3 class="category-headding ">{{b.Category}}</h3>
+                    <div class="headding-border bg-color-4"></div>
+                    <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+                        <h3><a href="#">{{b.Title}}</a></h3>
+                        <div class="post-thumb">
+                            {% if b.Image %}
+                            <a href="#">
+                                
+                                <img src={{ b.Image.url }} class="img-responsive" alt="">
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="post-title-author-details">
+                        <div class="post-editor-date">
+                            <div class="post-date">
+                                <i class="pe-7s-clock"></i> {{ b.Date_Created }}
+                            </div>
+                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                        </div>
+                        <p>{{ b.Description|slice:20}}... <a href="#">Read more...</a></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

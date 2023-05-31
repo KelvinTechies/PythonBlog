@@ -1,0 +1,47 @@
+{% extends 'dash.html' %} {% load static %} {% block section %}
+<div class="main_content_iner ">
+    <div class="container-fluid plr_30 body_white_bg pt_30">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="white_box mb_30">
+                    <div class="box_header ">
+                        <div class="main-title">
+                            <h3 class="mb-0">Create Post For News, Politics and Education Here</h3>
+                        </div>
+                    </div>
+                    <form action='' method='POST' enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3 input-group">
+                            <label class="form-label" for="exampleFormControlInput1">Author</label>
+                           <!-- {{ forms.Author }} -->
+                            <input  type="text" class="form-control" value="{{ post.Author }}" id="exampleFormControlInput1" name='author' placeholder="Author">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="exampleFormControlInput1">Title</label>
+                            <!-- {{ forms.Title }} -->
+                            <input type="text" value ="{{post.Title}}"  class="form-control" id="exampleFormControlInput1" name='title' placeholder="Title">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="exampleFormControlInput1">Category</label>
+                            <!-- {{ forms.Category }} -->
+                            
+                            <input type="text" value="{{post.Category}}" class="form-control" id="exampleFormControlInput1" name='category' placeholder="Category">
+                        </div>
+                        <div class="input-group mb-3">
+                                <input type="file" class="form-control" name='img' id="inputGroupFile02">
+                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                </div>
+                        <div class="mb-3">
+                            <label class="form-label" id='mytextareaLabel' for="exampleFormControlInput1 w-100">Description</label>
+                            <textarea class='w-100' id='mytextarea' name='description'>{{post.Description}}</textarea>
+                            <!-- {{ forms.Description }} -->
+                            
+                        </div>
+                        <button class='btn btn-outline-primary w-100'>Update</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

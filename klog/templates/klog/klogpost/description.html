@@ -1,0 +1,565 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <article class="content">
+                    <div class="post-thumb">
+                        <div class="videoWrapper">
+                            <iframe width="560" height="349" src="{% static'https://www.youtube.com/embed/fxS-leXA-Iw" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        
+                        <!-- /.social icon -->
+                    </div>
+                    <h1>{{post.Title}}</h1>
+                    <div class="date">
+                        <ul>
+                            <li>By<a title="" href="#"><span>{{post.Author}}</span></a> --</li>
+                            <li><a title="" href="#">11 Nov 2015</a> --</li>
+                            <li><a title="" href="#"><span>275 Comments</span></a></li>
+                        </ul>
+                    </div>
+                    <p> {{post.Description}}</p>
+                    <!-- quoto -->
+                    <div class="qtrotator">
+                        <div class="qtcontent">
+                            <blockquote>
+                                here are many variations of passages of Lorem Ipsum available, but the majority <a href="#">have suffered alteration</a> in some form
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <!-- tags -->
+                    <div class="tags">
+                        <ul>
+                            <li> <a href="#">Education</a></li>
+                            <li> <a href="#">Health &amp; Fitness</a></li>
+                            <li><a href="#">Fashion</a></li>
+                            <li><a href="#">Collage</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Music</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Lifestyle</a></li>
+                        </ul>
+                    </div>
+                    <!-- Related news area
+                        ============================================ -->
+                    <div class="related-news-inner">
+                        <h3 class="category-headding ">Check whats Happening</h3>
+                        <div class="headding-border"></div>
+                        <div class="row">
+                            <div id="content-slide-5" class="owl-carousel">
+                                <!-- item-1 -->
+                                <div class="item">
+                                    <div class="row rn_block">
+                                        {% for blog in blogs%}
+                                        <div class="col-xs-12 col-md-4 col-sm-4 padd">
+                                            <div class="post-wrapper effects">
+                                                <!-- image -->
+                                                <div class="post-thumb">
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{% static 'images/articale.jpg' %}" alt="">
+                                                        <div class="overlay">
+                                                            <a href="#" class="expand"><i class="fa fa-play"></i></a>
+                                                            <a class="close-overlay hidden">x</a>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-title-author-details">
+                                                <h4><a href="#">{{blog.Title}}</a></h4>
+                                            </div>
+                                        </div>
+                                        {%endfor%}
+                                 
+                                    </div>
+                                </div>
+                                <!-- item-2 -->
+                                <div class="item">
+                                    <div class="row rn_block">
+                                        <div class="col-xs-12 col-md-4 col-sm-4 padd">
+                                            <div class="post-wrapper effects">
+                                                <!-- image -->
+                                                <div class="post-thumb">
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{% static 'images/articale04.jpg' %}" alt="">
+                                                    </a>
+                                                    <div class="overlay">
+                                                        <a href="#" class="expand"><i class="fa fa-play"></i></a>
+                                                        <a class="close-overlay hidden">x</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-title-author-details">
+                                                <h4><a href="#">World Econmy Changing and Affecting in 3rd ...</a></h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-md-4 col-sm-4 padd">
+                                            <div class="post-wrapper effects">
+                                                <!-- image -->
+                                                <div class="post-thumb">
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{% static 'images/articale05.jpg' %}" alt="">
+                                                        <div class="overlay">
+                                                            <a href="#" class="expand"><i class="fa fa-play"></i></a>
+                                                            <a class="close-overlay hidden">x</a>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-title-author-details">
+                                                <h4><a href="#">World Econmy Changing and Affecting in 3rd ...</a></h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-md-4 col-sm-4 padd">
+                                            <div class="post-wrapper effects">
+                                                <!-- image -->
+                                                <div class="post-thumb">
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{% static 'images/articale06.jpg' %}" alt="">
+                                                        <div class="overlay">
+                                                            <a href="#" class="expand"><i class="fa fa-play"></i></a>
+                                                            <a class="close-overlay hidden">x</a>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-title-author-details">
+                                                <h4><a href="#">World Econmy Changing and Affecting in 3rd ...</a></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- form
+                        ============================================ -->
+                    <div class="form-area">
+                        <h3 class="category-headding ">LEAVE A COMMENT</h3>
+                        <div class="headding-border"></div>
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <span class="input">
+                                            <input class="input_field" type="text" id="input-1">
+                                            <label class="input_label" for="input-1">
+                                                <span class="input_label_content" data-content="Your Name">Your Name</span>
+                                    </label>
+                                    </span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <span class="input">
+                                            <input class="input_field" type="text" id="input-2">
+                                            <label class="input_label" for="input-2">
+                                                <span class="input_label_content" data-content="Your Email">Your Email</span>
+                                    </label>
+                                    </span>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span class="input">
+                                            <textarea class="input_field" id="message"></textarea>
+                                            <label class="input_label" for="message">
+                                                <span class="input_label_content" data-content="Your Email">Your Message</span>
+                                    </label>
+                                    </span>
+                                    <button type="button" class="btn btn-style">Post Your Comment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- comment box
+                        ============================================ -->
+                    <div class="comments-container">
+                        <h1>Comment </h1>
+                        <ul id="comments-list" class="comments-list">
+                            <li>
+                                <div class="comment-main-level">
+                                    <!-- Avatar -->
+                                    <div class="comment-avatar"><img src="{% static 'images/comment-01.jpg' %}" class="img-circle" alt=""></div>
+                                    <!-- Contenedor del Comentario -->
+                                    <div class="comment-box">
+                                        <div class="comment-head">
+                                            <h6 class="comment-name by-author"><a href="#">Agustin Ortiz</a></h6>
+                                            <span>hace 20 minutos</span>
+                                            <i class="fa fa-reply"></i>
+                                            <i class="fa fa-heart"></i>
+                                        </div>
+                                        <div class="comment-content">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Respuestas de los comentarios -->
+                                <ul class="comments-list reply-list">
+                                    <li>
+                                        <!-- Avatar -->
+                                        <div class="comment-avatar"><img src="{% static 'images/comment-02.jpg' %}" class="img-circle" alt=""></div>
+                                        <!-- Contenedor del Comentario -->
+                                        <div class="comment-box">
+                                            <div class="comment-head">
+                                                <h6 class="comment-name"><a href="#">Lorena Rojero</a></h6>
+                                                <span>hace 10 minutos</span>
+                                                <i class="fa fa-reply"></i>
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="comment-content">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <!-- Avatar -->
+                                        <div class="comment-avatar"><img src="{% static 'images/comment-01.jpg' %}" class="img-circle" alt=""></div>
+                                        <!-- Contenedor del Comentario -->
+                                        <div class="comment-box">
+                                            <div class="comment-head">
+                                                <h6 class="comment-name by-author"><a href="#">Agustin Ortiz</a></h6>
+                                                <span>hace 10 minutos</span>
+                                                <i class="fa fa-reply"></i>
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="comment-content">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="comment-main-level">
+                                    <!-- Avatar -->
+                                    <div class="comment-avatar"><img src="{% static 'images/comment-02.jpg' %}" class="img-circle" alt=""></div>
+                                    <!-- Contenedor del Comentario -->
+                                    <div class="comment-box">
+                                        <div class="comment-head">
+                                            <h6 class="comment-name"><a href="#">Lorena Rojero</a></h6>
+                                            <span>hace 10 minutos</span>
+                                            <i class="fa fa-reply"></i>
+                                            <i class="fa fa-heart"></i>
+                                        </div>
+                                        <div class="comment-content">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-4 left-padding">
+                <aside class="sidebar">
+                    <div class="input-group search-area">
+                        <!-- search area -->
+                        <input type="text" class="form-control" placeholder="Search articles here ..." name="q">
+                        <div class="input-group-btn">
+                            <button class="btn btn-search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.search area -->
+                    <div class="banner-add">
+                        <!-- add -->
+                        <span class="add-title">- Advertisement -</span>
+                        <a href="#"><img src="{% static 'images/ad-banner.jpg' %}" class="img-responsive center-block" alt=""></a>
+                    </div>
+                    <div class="tab-inner">
+                        <ul class="tabs">
+                            <li><a href="#">POPULAR</a></li>
+                            <li><a href="#">MOST VIEWED</a></li>
+                        </ul>
+                        <hr>
+                        <!-- tabs -->
+                        <div class="tab_content">
+                            <div class="tab-item-inner">
+                                <div class="box-item wow fadeIn effects" data-wow-duration="1s">
+                                    <div class="img-thumb">
+                                        <a href="#" rel="bookmark"><img class="entry-thumb" src="{% static 'images/popular_news_01.jpg' %}" alt="" height="80" width="90">
+                                            <div class="overlay">
+                                                <a href="#" class="expand-1" id="player-button"><i class="fa fa-play"></i></a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item-details">
+                                        <h6 class="sub-category-title bg-color-1">
+                                                <a href="#">SPORTS</a>
+                                            </h6>
+                                        <h3 class="td-module-title"><a href="#">It is a long established fact that a reader will</a></h3>
+                                        <div class="post-editor-date">
+                                            <!-- post date -->
+                                            <div class="post-date">
+                                                <i class="pe-7s-clock"></i> Oct 6, 2016
+                                            </div>
+                                            <!-- post comment -->
+                                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-item wow fadeIn effects" data-wow-duration="1s" data-wow-delay="0.1s">
+                                    <div class="img-thumb">
+                                        <a href="#" rel="bookmark"><img class="entry-thumb" src="{% static 'images/popular_news_02.jpg' %}" alt="" height="80" width="90">
+                                            <div class="overlay">
+                                                <a href="#" class="expand-1" id="player-button"><i class="fa fa-play"></i></a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item-details">
+                                        <h6 class="sub-category-title bg-color-2">
+                                                <a href="#">TECHNOLOGY </a>
+                                            </h6>
+                                        <h3 class="td-module-title"><a href="#">The generated Lorem Ipsum is therefore</a></h3>
+                                        <div class="post-editor-date">
+                                            <!-- post date -->
+                                            <div class="post-date">
+                                                <i class="pe-7s-clock"></i> Oct 6, 2016
+                                            </div>
+                                            <!-- post comment -->
+                                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-item wow fadeIn effects" data-wow-duration="1s" data-wow-delay="0.2s">
+                                    <div class="img-thumb">
+                                        <a href="#" rel="bookmark"><img class="entry-thumb" src="{% static 'images/popular_news_03.jpg' %}" alt="" height="80" width="90">
+                                            <div class="overlay">
+                                                <a href="#" class="expand-1" id="player-button"><i class="fa fa-play"></i></a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item-details">
+                                        <h6 class="sub-category-title bg-color-3">
+                                                <a href="#">HEALTH</a>
+                                            </h6>
+                                        <h3 class="td-module-title"><a href="#">The standard chunk of Lorem Ipsum used since</a></h3>
+                                        <div class="post-editor-date">
+                                            <!-- post date -->
+                                            <div class="post-date">
+                                                <i class="pe-7s-clock"></i> Oct 6, 2016
+                                            </div>
+                                            <!-- post comment -->
+                                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-item wow fadeIn effects" data-wow-duration="1s" data-wow-delay="0.3s">
+                                    <div class="img-thumb">
+                                        <a href="#" rel="bookmark"><img class="entry-thumb" src="{% static 'images/popular_news_04.jpg' %}" alt="" height="80" width="90">
+                                            <div class="overlay">
+                                                <a href="#" class="expand-1" id="player-button"><i class="fa fa-play"></i></a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item-details">
+                                        <h6 class="sub-category-title bg-color-4">
+                                                <a href="#">FASHION</a>
+                                            </h6>
+                                        <h3 class="td-module-title"><a href="#">Lorem Ipum therefore always free from</a></h3>
+                                        <div class="post-editor-date">
+                                            <!-- post date -->
+                                            <div class="post-date">
+                                                <i class="pe-7s-clock"></i> Oct 6, 2016
+                                            </div>
+                                            <!-- post comment -->
+                                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / tab item -->
+                            <div class="tab-item-inner">
+                                <div class="box-item effects">
+                                    <div class="img-thumb">
+                                        <a href="#" rel="bookmark"><img class="entry-thumb" src="{% static 'images/popular_news_01.jpg' %}" alt="" height="80" width="90">
+                                            <div class="overlay">
+                                                <a href="#" class="expand-1" id="player-button"><i class="fa fa-play"></i></a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item-details">
+                                        <h6 class="sub-category-title bg-color-5">
+                                                <a href="#">BUSINESS</a>
+                                            </h6>
+                                        <h3 class="td-module-title"><a href="#">It is a long established fact that a reader will</a></h3>
+                                        <div class="post-editor-date">
+                                            <!-- post date -->
+                                            <div class="post-date">
+                                                <i class="pe-7s-clock"></i> Oct 6, 2016
+                                            </div>
+                                            <!-- post comment -->
+                                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-item effects">
+                                    <div class="img-thumb">
+                                        <a href="#" rel="bookmark"><img class="entry-thumb" src="{% static 'images/popular_news_02.jpg' %}" alt="" height="80" width="90">
+                                            <div class="overlay">
+                                                <a href="#" class="expand-1" id="player-button"><i class="fa fa-play"></i></a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item-details">
+                                        <h6 class="sub-category-title bg-color-2">
+                                                <a href="#">TECHNOLOGY </a>
+                                            </h6>
+                                        <h3 class="td-module-title"><a href="#">The generated Lorem Ipsum is therefore</a></h3>
+                                        <div class="post-editor-date">
+                                            <!-- post date -->
+                                            <div class="post-date">
+                                                <i class="pe-7s-clock"></i> Oct 6, 2016
+                                            </div>
+                                            <!-- post comment -->
+                                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-item effects">
+                                    <div class="img-thumb">
+                                        <a href="#" rel="bookmark"><img class="entry-thumb" src="{% static 'images/popular_news_03.jpg' %}" alt="" height="80" width="90">
+                                            <div class="overlay">
+                                                <a href="#" class="expand-1" id="player-button"><i class="fa fa-play"></i></a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item-details">
+                                        <h6 class="sub-category-title bg-color-3">
+                                                <a href="#">HEALTH</a>
+                                            </h6>
+                                        <h3 class="td-module-title"><a href="#">The standard chunk of Lorem Ipsum used since</a></h3>
+                                        <div class="post-editor-date">
+                                            <!-- post date -->
+                                            <div class="post-date">
+                                                <i class="pe-7s-clock"></i> Oct 6, 2016
+                                            </div>
+                                            <!-- post comment -->
+                                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-item effects">
+                                    <div class="img-thumb">
+                                        <a href="#" rel="bookmark"><img class="entry-thumb" src="{% static 'images/popular_news_04.jpg' %}" alt="" height="80" width="90">
+                                            <div class="overlay">
+                                                <a href="#" class="expand-1" id="player-button"><i class="fa fa-play"></i></a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item-details">
+                                        <h6 class="sub-category-title bg-color-4">
+                                                <a href="#">FASHION</a>
+                                            </h6>
+                                        <h3 class="td-module-title"><a href="#">Lorem Ipum therefore always free from</a></h3>
+                                        <div class="post-editor-date">
+                                            <!-- post date -->
+                                            <div class="post-date">
+                                                <i class="pe-7s-clock"></i> Oct 6, 2016
+                                            </div>
+                                            <!-- post comment -->
+                                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / tab item -->
+                        </div>
+                        <!-- / tab_content -->
+                    </div>
+                    <!-- / tab -->
+                    <!-- comments -->
+                    <div class="latest-comments-inner">
+                        <h3 class="category-headding ">LATEST COMMENT</h3>
+                        <div class="headding-border"></div>
+                        <!-- latest comment post -->
+                        <div class="post-style2 latest-com">
+                            <img src="{% static 'images/comment-01.jpg' %}" alt="">
+                            <div class="latest-com-detail">
+                                <h5><a href="#" title="">It uses a dictionary of over</a></h5>
+                                <span>Nec sagittis sem nibh dictionary...</span>
+                                <p>Proin gravida nibh vel velit auctor aliquet. </p>
+                            </div>
+                        </div>
+                        <!-- latest comment post -->
+                        <div class="post-style2 latest-com">
+                            <img src="{% static 'images/comment-02.jpg' %}" alt="">
+                            <div class="latest-com-detail">
+                                <h5><a href="#" title="">It uses a dictionary of over</a></h5>
+                                <span>Nec sagittis sem nibh dictionary...</span>
+                                <p>Proin gravida nibh vel velit auctor aliquet. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slider widget -->
+                    <div class="widget-slider-inner">
+                        <h3 class="category-headding ">Slider Widget</h3>
+                        <div class="headding-border"></div>
+                        <div id="widget-slider" class="owl-carousel owl-theme">
+                            <!-- widget item -->
+                            <div class="item effects">
+                                <div class="post-thumb">
+                                    <img src="{% static 'images/slider-widget-1.jpg' %}" alt="">
+                                    <div class="overlay">
+                                        <a href="#" class="expand"><i class="fa fa-play"></i></a>
+                                        <a class="close-overlay hidden">x</a>
+                                    </div>
+                                </div>
+                                <h4><a href="#">For good results must be make good plan</a></h4>
+                                <div class="date">
+                                    <ul>
+                                        <li>By<a title="" href="#"><span>Jone Kilna</span></a> --</li>
+                                        <li><a title="" href="#">11 Nov 2015</a></li>
+                                    </ul>
+                                </div>
+                                <p>Dhaka: Dhaka Metropolitan Sessions a Judge Court on Wednesday issued warrants for the arrest of 29 BNP leaders, including some ina senior leaders...</p>
+                            </div>
+                            <!-- widget item -->
+                            <div class="item effects">
+                                <div class="post-thumb">
+                                    <img src="{% static 'images/slider-widget-2.jpg' %}" alt="">
+                                    <div class="overlay">
+                                        <a href="#" class="expand"><i class="fa fa-play"></i></a>
+                                        <a class="close-overlay hidden">x</a>
+                                    </div>
+                                </div>
+                                <h4><a href="#">Dog invason sparks chaos at IPL match</a></h4>
+                                <div class="date">
+                                    <ul>
+                                        <li>By<a title="" href="#"><span>Jone Kilna</span></a> --</li>
+                                        <li><a title="" href="#">11 Nov 2015</a></li>
+                                    </ul>
+                                </div>
+                                <p>Dhaka: Dhaka Metropolitan Sessions a Judge Court on Wednesday issued warrants for the arrest of 29 BNP leaders, including some ina senior leaders ...</p>
+                            </div>
+                            <!-- widget item -->
+                            <div class="item effects">
+                                <div class="post-thumb">
+                                    <img src="{% static 'images/slider-widget-3.jpg' %}" alt="">
+                                    <div class="overlay">
+                                        <a href="#" class="expand"><i class="fa fa-play"></i></a>
+                                        <a class="close-overlay hidden">x</a>
+                                    </div>
+                                </div>
+                                <h4><a href="#">For good results must be make good plan</a></h4>
+                                <div class="date">
+                                    <ul>
+                                        <li>By<a title="" href="#"><span>Jone Kilna</span></a> --</li>
+                                        <li><a title="" href="#">11 Nov 2015</a></li>
+                                    </ul>
+                                </div>
+                                <p>Dhaka: Dhaka Metropolitan Sessions a Judge Court on Wednesday issued warrants for the arrest of 29 BNP leaders, including some ina senior leaders ...</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

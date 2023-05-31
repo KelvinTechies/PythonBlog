@@ -1,0 +1,77 @@
+{% extends 'dash.html' %}
+
+{% load static %}
+
+{% block section %}
+
+
+<div class="main_content_iner ">
+        <div class="container-fluid plr_30 body_white_bg pt_30">
+        <div class="row justify-content-center">
+        <div class="col-12">
+        <div class="QA_section">
+        <div class="white_box_tittle list_header">
+        <h4>All Posts</h4>
+        <div class="box_right d-flex lms_block">
+        <div class="serach_field_2">
+        <div class="search_inner">
+        <form Active="#">
+        <div class="search_field">
+        <input type="text" placeholder="Search content here...">
+        </div>
+        <button type="submit"> <i class="ti-search"></i> </button>
+        </form>
+        </div>
+        </div>
+        <div class="add_button ms-2">
+        <a href="{% url 'create-post' %}" data-bs-toggle="" data-bs-target="#addcategory" class="btn_1">Add New</a>
+        </div>
+        </div>
+        </div>
+        <div class="QA_table ">
+        
+        <table class="table lms_table_active">
+        <thead>
+            
+        <tr>
+        <th scope="col">Author</th>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Image</th>
+        <th scope="col">Description</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+
+                
+
+                {% for post in posts %}
+            
+        <tr>
+        <td>{{post.Author}}</td>
+        <td>{{post.Title}}</td>
+        <td>{{post.Category}}</td>
+        <td> {% if post.Image %}
+                <img width='50' src= {{post.Image.url}}>
+                {% endif %}
+                </td>
+        <td>{{post.Description|slice:30}}...</td>
+        <td><a href="{% url 'edit-blog' post.id %}" class="btn btn-primary text-white">Edit</a></td>
+        <td><form method='POST' action="{% url 'delete-blog' post.id %}">
+                {% csrf_token %}
+                <button type='submit' name='confirm' class="btn btn-danger text-white">Delete</button></td></form>
+        </tr>
+        {% endfor %}
+        
+        </tbody>
+        </table>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+{% endblock %}

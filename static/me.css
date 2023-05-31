@@ -1,0 +1,12 @@
+#mytextareaLabel{
+    display:block;
+}
+#mytextarea{
+    min-height:50vh;
+    border: 1px solid #ced4da;
+    resize:none;
+}
+
+.my-red{
+    backgound:red;
+}
